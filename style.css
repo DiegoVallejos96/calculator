@@ -4,6 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: black;
+
 }
 
 .container-sup{
@@ -35,6 +36,12 @@ body {
     background-color: rgb(17, 168, 118);
     border: gray solid 9px;
     border-bottom: 2.5px;
+    text-align: end;
+    font-size: 45px;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
 }
 
 .calculator-buttons{

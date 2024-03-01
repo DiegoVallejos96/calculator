@@ -76,46 +76,66 @@ btnNine.addEventListener("click", () => {
 const btnCe = document.querySelector('#bCE')
 btnCe.addEventListener("click", () => {
     screen.textContent = ""
+    number = '0'
+    valueScreen = []
+    console.log(valueScreen);
+
 })
 const btnAdd = document.querySelector('#bAdd')
 btnAdd.addEventListener("click", () => {
-    screen.textContent += '+'
-    let lastValue = valueScreen[valueScreen.length - 1]
-    console.log('el ultimo valor es', lastValue);
-    valueScreen = []
-    valueScreen.push(lastValue,'+')
-    console.log(valueScreen);
-    number = ''
+    if (valueScreen != ''){
+        screen.textContent += '+'
+        let lastValue = valueScreen[valueScreen.length - 1]
+        console.log('el ultimo valor es', lastValue);
+        valueScreen = []
+        valueScreen.push(lastValue,'+')
+        console.log(valueScreen);
+        number = ''
+    }else {
+        screen.textContent = ''
+    }
 })
 const btnSubtract = document.querySelector('#bSubs')
 btnSubtract.addEventListener("click", () => {
-    screen.textContent += '-'
-    let lastValue = valueScreen[valueScreen.length - 1]
-    console.log('el ultimo valor es', lastValue);
-    valueScreen = []
-    valueScreen.push(lastValue,'-')
-    console.log(valueScreen);
-    number = ''
+    if (valueScreen != ''){
+        screen.textContent += '-'
+        let lastValue = valueScreen[valueScreen.length - 1]
+        console.log('el ultimo valor es', lastValue);
+        valueScreen = []
+        valueScreen.push(lastValue,'-')
+        console.log(valueScreen);
+        number = ''
+    }else {
+        screen.textContent = ''
+    }
 })
 const btnMultiply = document.querySelector('#bMult')
 btnMultiply.addEventListener("click", () => {
-    screen.textContent += '*'
-    let lastValue = valueScreen[valueScreen.length - 1]
-    console.log('el ultimo valor es', lastValue);
-    valueScreen = []
-    valueScreen.push(lastValue,'*')
-    console.log(valueScreen);
-    number = ''
+    if (valueScreen != ''){
+        screen.textContent += '*'
+        let lastValue = valueScreen[valueScreen.length - 1]
+        console.log('el ultimo valor es', lastValue);
+        valueScreen = []
+        valueScreen.push(lastValue,'*')
+        console.log(valueScreen);
+        number = ''
+    }else {
+        screen.textContent = ''
+    }
 })
 const btnDivide = document.querySelector('#bDiv')
 btnDivide.addEventListener("click", () => {  
-    screen.textContent += '/'
-    let lastValue = valueScreen[valueScreen.length - 1]
-    console.log('el ultimo valor es', lastValue);
-    valueScreen = []
-    valueScreen.push(lastValue,'/')
-    console.log(valueScreen);
-    number = ''
+    if (valueScreen != ''){
+        screen.textContent += '/'
+        let lastValue = valueScreen[valueScreen.length - 1]
+        console.log('el ultimo valor es', lastValue);
+        valueScreen = []
+        valueScreen.push(lastValue,'/')
+        console.log(valueScreen);
+        number = ''
+    }else {
+        screen.textContent = ''
+    }
 })
 const btnEqual = document.querySelector('#bEqual')
 btnEqual.addEventListener("click", () => {
@@ -155,7 +175,9 @@ function operate(a,b,c){
 
 function add (a,b){
     let result = parseInt(a)+parseInt(b);
-    valueScreen = [result] 
+    valueScreen = [result]
+    screen.textContent = valueScreen[0]
+ 
     return console.log(result);
     
 }
@@ -163,18 +185,24 @@ function add (a,b){
 function subtract (a,b){
     let result = parseInt(a)-parseInt(b);
     valueScreen = [result] 
+    screen.textContent = valueScreen[0]
+
     return console.log(result);
 }
 
 function multiply (a,b){
     let result = parseInt(a)*parseInt(b);
     valueScreen = [result] 
+    screen.textContent = valueScreen[0]
+
     return console.log(result);
 }
 
 function divide (a,b){
     let result = parseInt(a)/parseInt(b);
     valueScreen = [result] 
+    screen.textContent = valueScreen[0]
+
     return console.log(result);}
 
 

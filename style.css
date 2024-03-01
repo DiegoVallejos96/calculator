@@ -31,7 +31,7 @@ body {
 }
 
 #calculator-screen{
-    width: 78.5%;
+    width: 78.7%;
     height: 15vh;
     background-color: rgb(17, 168, 118);
     border: gray solid 9px;
@@ -50,8 +50,6 @@ body {
     display: flex;
     justify-content: space-between;
     border: gray solid 5px;
-
-
 
 }
 
@@ -79,6 +77,11 @@ body {
     background-color: aqua;
     border: gray solid 6px;
     width: 33.33%;
+    font-size: 45px;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
 }
 
 .btn-o{
@@ -86,6 +89,11 @@ body {
     height: 100px;
     width: 100%;
     border: gray solid 5px;
+    font-size: 45px;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
 }
 
 .space{
@@ -93,6 +101,7 @@ body {
     width: 79.3%;
     align-self: center;   
     border: gray solid 7px;
+    
  
 }
 
@@ -100,4 +109,9 @@ body {
     background-color: green;
     width: 50%;
     height: 5vh;
+    font-size: 22px;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
 }

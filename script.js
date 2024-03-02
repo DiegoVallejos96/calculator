@@ -39,7 +39,7 @@ document.addEventListener('keydown', (event) => {
     }else if (key === 'Delete') {
         btnAc.click();
     }else if (key === 'Backspace') {
-        btnAc.click();
+        btnDel.click();
     }else if (key === 'Enter') {
         btnEqual.click();
     }else if (key === '.') {
@@ -53,6 +53,14 @@ btnDot.addEventListener("click", () => {
     number += '.'
     valueScreen.push(number)
     console.log(valueScreen);
+})
+
+const btnAc = document.querySelector('#bAC')
+btnAc.addEventListener("click", () => {
+    screen.textContent = ''
+    number = ''
+    valueScreen = []
+    console.clear();
 })
 
 const btnZero = document.querySelector('#n0')
@@ -163,12 +171,23 @@ btnNine.addEventListener("click", () => {
     console.log(valueScreen);
 })
 
-const btnAc = document.querySelector('#bAC')
-btnAc.addEventListener("click", () => {
-    screen.textContent = "0"
-    number = '0'
-    valueScreen = []
-    console.clear()
+const btnNeg = document.querySelector('#negative')
+btnNeg.addEventListener("click", () => {
+    if(screen.textContent[0] === '0'){
+        screen.textContent = ''
+    }
+    screen.textContent += '-'
+    number += '-'
+    valueScreen.push(number)
+    console.log(valueScreen);
+})
+
+const btnDel= document.querySelector('#del')
+btnDel.addEventListener("click", () => {
+    valueScreen.pop()
+    const delScreen = screen.textContent.slice(0, -1);
+    screen.textContent = delScreen;
+    console.log(valueScreen);
 })
 
 const btnAdd = document.querySelector('#bAdd')

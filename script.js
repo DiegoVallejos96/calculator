@@ -268,6 +268,11 @@ btnDivide.addEventListener("click", () => {
 
 const btnEqual = document.querySelector('#bEqual')
 btnEqual.addEventListener("click", () => {
+    if (valueScreen[valueScreen.length - 1] === '+' || valueScreen[valueScreen.length - 1] === '-' || valueScreen[valueScreen.length - 1] === '*' || valueScreen[valueScreen.length - 1] === '/'){
+        operate(0,'+',0)
+        screen.textContent = '0'
+        valueScreen = []
+    }
     screen.textContent = ' '
     operate(valueScreen[0],valueScreen[1],valueScreen[valueScreen.length - 1])
     console.log(valueScreen);
@@ -290,31 +295,60 @@ function operate(a,b,c){
 }
 
 function add (a,b){
-    let result = parseFloat(a)+parseFloat(b);
-    valueScreen = [result]
-    screen.textContent = valueScreen[0]
-    return console.log(result);
+    let result = (parseFloat(a)+parseFloat(b)).toFixed(4);
+    let resultFormated = parseFloat(result.toString())
+    if (Number.isInteger(resultFormated)){
+        valueScreen = [resultFormated] 
+        screen.textContent = valueScreen[0]
+    }else{
+        valueScreen = [resultFormated]
+        screen.textContent = valueScreen[0]
+    }
+    return console.log(resultFormated);
 }
 
 function subtract (a,b){
-    let result = parseFloat(a)-parseFloat(b);
-    valueScreen = [result] 
-    screen.textContent = valueScreen[0]
-    return console.log(result);
+    let result = (parseFloat(a)-parseFloat(b)).toFixed(4);
+    let resultFormated = parseFloat(result.toString())
+    if (Number.isInteger(resultFormated)){
+        valueScreen = [resultFormated] 
+        screen.textContent = valueScreen[0]
+    }else{
+        valueScreen = [resultFormated]
+        screen.textContent = valueScreen[0]
+    }
+    return console.log(resultFormated);
 }
 
 function multiply (a,b){
-    let result = parseFloat(a)*parseFloat(b);
-    valueScreen = [result] 
-    screen.textContent = valueScreen[0]
-    return console.log(result);
+    let result = (parseFloat(a)*parseFloat(b)).toFixed(4);
+    let resultFormated = parseFloat(result.toString())
+    if (Number.isInteger(resultFormated)){
+        valueScreen = [resultFormated] 
+        screen.textContent = valueScreen[0]
+    }else{
+        valueScreen = [resultFormated]
+        screen.textContent = valueScreen[0]
+    }
+    return console.log(resultFormated);
 }
 
 function divide (a,b){
-    let result = parseFloat(a)/parseFloat(b);
-    valueScreen = [result] 
-    screen.textContent = valueScreen[0]
-    return console.log(result);}
+    if (b === '0'){
+        screen.textContent = '-.- omg man...'
+    }else {
+        let result = (parseFloat(a)/parseFloat(b)).toFixed(4);
+        let resultFormated = parseFloat(result.toString())
+        if (Number.isInteger(resultFormated)){
+            valueScreen = [resultFormated] 
+            screen.textContent = valueScreen[0]
+        }else{
+            valueScreen = [resultFormated]
+            screen.textContent = valueScreen[0]
+        }
+        return console.log(resultFormated);
+    }
+}
 
 
 

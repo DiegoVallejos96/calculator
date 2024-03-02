@@ -83,6 +83,16 @@ btnCe.addEventListener("click", () => {
 })
 const btnAdd = document.querySelector('#bAdd')
 btnAdd.addEventListener("click", () => {
+    if (valueScreen[valueScreen.length - 1] === '+'){
+        operate(0,'+',0)
+    }
+
+    if (valueScreen.includes('-') || valueScreen.includes('+') || valueScreen.includes('*') || valueScreen.includes('/')) {
+        operate(valueScreen[0],valueScreen[1],valueScreen[valueScreen.length - 1])
+        console.log(valueScreen);
+    }
+
+    
     if (valueScreen != ''){
         screen.textContent += '+'
         let lastValue = valueScreen[valueScreen.length - 1]
@@ -95,8 +105,16 @@ btnAdd.addEventListener("click", () => {
         screen.textContent = ''
     }
 })
+
 const btnSubtract = document.querySelector('#bSubs')
 btnSubtract.addEventListener("click", () => {
+    if (valueScreen[valueScreen.length - 1] === '-'){
+        operate(0,'-',0)
+    }
+    if (valueScreen.includes('-') || valueScreen.includes('+') || valueScreen.includes('*') || valueScreen.includes('/')) {
+        operate(valueScreen[0],valueScreen[1],valueScreen[valueScreen.length - 1])
+        console.log(valueScreen);
+    }
     if (valueScreen != ''){
         screen.textContent += '-'
         let lastValue = valueScreen[valueScreen.length - 1]
@@ -109,8 +127,17 @@ btnSubtract.addEventListener("click", () => {
         screen.textContent = ''
     }
 })
+
 const btnMultiply = document.querySelector('#bMult')
 btnMultiply.addEventListener("click", () => {
+    if (valueScreen[valueScreen.length - 1] === '*'){
+        operate(0,'*',0)
+    }
+    if (valueScreen.includes('-') || valueScreen.includes('+') || valueScreen.includes('*') || valueScreen.includes('/')) {
+        operate(valueScreen[0],valueScreen[1],valueScreen[valueScreen.length - 1])
+        console.log(valueScreen);
+    }
+
     if (valueScreen != ''){
         screen.textContent += '*'
         let lastValue = valueScreen[valueScreen.length - 1]
@@ -123,8 +150,17 @@ btnMultiply.addEventListener("click", () => {
         screen.textContent = ''
     }
 })
+
 const btnDivide = document.querySelector('#bDiv')
 btnDivide.addEventListener("click", () => {  
+    if (valueScreen[valueScreen.length - 1] === '/'){
+        operate(0,'/',0)
+    }
+    if (valueScreen.includes('-') || valueScreen.includes('+') || valueScreen.includes('*') || valueScreen.includes('/')) {
+        operate(valueScreen[0],valueScreen[1],valueScreen[valueScreen.length - 1])
+        console.log(valueScreen);
+    }
+
     if (valueScreen != ''){
         screen.textContent += '/'
         let lastValue = valueScreen[valueScreen.length - 1]
@@ -137,6 +173,7 @@ btnDivide.addEventListener("click", () => {
         screen.textContent = ''
     }
 })
+
 const btnEqual = document.querySelector('#bEqual')
 btnEqual.addEventListener("click", () => {
     screen.textContent = ' '
@@ -146,9 +183,9 @@ btnEqual.addEventListener("click", () => {
 
 
 let number = ''
-// const second = ""
-// const operator = ''
+let replaceItem = []
 let valueScreen = []
+let valueScreenZero = [0,'+',0]
 
 // a operate le mando un array con 3 objetos, firstnumber toma el array [1] y asi
 

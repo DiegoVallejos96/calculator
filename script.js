@@ -176,9 +176,12 @@ btnNeg.addEventListener("click", () => {
     if(screen.textContent[0] === '0'){
         screen.textContent = ''
     }
-    screen.textContent += '-'
-    number += '-'
-    valueScreen.push(number)
+    let lastValue = valueScreen[valueScreen.length -1]
+    let negLastValue = '-' + lastValue
+    lastValue = negLastValue
+    console.log(lastValue);
+    screen.textContent = lastValue
+    valueScreen.push(lastValue)
     console.log(valueScreen);
 })
 

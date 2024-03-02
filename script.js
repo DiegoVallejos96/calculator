@@ -2,10 +2,6 @@ const screen = document.querySelector('#calculator-screen')
 let number = ''
 let valueScreen = []
 
-if (valueScreen.length === 0) {
-    screen.textContent = '0';
-}
-
 document.addEventListener('keydown', (event) => {
     const key = event.key;
     if (key === '1') {
